@@ -1,6 +1,6 @@
 from django.db import models
 from rest_framework import serializers
-from .models import Card
+from .models import Card, Deck
 
 class CardSerializer(serializers.ModelSerializer):
     class Meta:
@@ -12,4 +12,14 @@ class CardSerializer(serializers.ModelSerializer):
             'desc',
             'created_at',
             'updated_at'
+        )
+
+
+class DeckSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Deck
+        fields = (
+            'id',
+            'title',
+            'desc'
         )
