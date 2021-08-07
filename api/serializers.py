@@ -9,6 +9,7 @@ class CardSerializer(serializers.ModelSerializer):
             'id',
             'front',
             'back',
-            'desc'
-            
+            'desc',
+            'created_at',
+            'updated_at'
         )
