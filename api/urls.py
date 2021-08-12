@@ -6,5 +6,6 @@ urlpatterns = [
     path('card/', views.card_list),
     path('card/<uuid:pk>', views.card_detail),
     path('deck/', views.deck_list),
+    path('deck/<uuid:pk>', views.deck_detail)
     # path('published/', views.card_list_published)
 ]
