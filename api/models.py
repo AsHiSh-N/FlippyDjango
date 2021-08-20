@@ -16,8 +16,8 @@ class Deck(models.Model):
 
 class Card(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    front = models.CharField(max_length=30, blank=True, default='')
-    back = models.CharField(max_length=30, blank=False, default='')
+    front = models.CharField(max_length=40, blank=True, default='')
+    back = models.CharField(max_length=50, blank=False, default='')
     desc = models.TextField(max_length=100, blank=True, default='')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
