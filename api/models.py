@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 import uuid
@@ -6,6 +7,7 @@ import uuid
 
 class Deck(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    # owner = models.ForeignKey(User, default='aasu', blank = True, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     desc = models.TextField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -16,6 +18,7 @@ class Deck(models.Model):
 
 class Card(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    # owner = models.ForeignKey(User,default = 'aasu', blank = True,on_delete=models.CASCADE)
     front = models.CharField(max_length=40, blank=True, default='')
     back = models.CharField(max_length=50, blank=False, default='')
     desc = models.TextField(max_length=100, blank=True, default='')

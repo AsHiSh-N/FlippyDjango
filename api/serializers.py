@@ -8,6 +8,7 @@ class CardSerializer(serializers.ModelSerializer):
         model = Card
         fields = (
             'id',
+            # 'owner',
             'front',
             'back',
             'desc',
@@ -27,6 +28,7 @@ class DeckSerializer(serializers.ModelSerializer):
         model = Deck
         fields =(
             'id',
+            # 'owner',
             'title',
             'desc',
             'cards'
